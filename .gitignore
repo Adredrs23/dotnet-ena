@@ -1,0 +1,70 @@
+# ================================
+# .NET / Visual Studio
+# ================================
+
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
+.vs/
+.vscode/
+
+# Rider / JetBrains
+.idea/
+
+# ================================
+# User-specific files
+# ================================
+
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ================================
+# Build & publish outputs
+# ================================
+
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+
+# ================================
+# ASP.NET Core
+# ================================
+
+appsettings.Development.json
+appsettings.Local.json
+
+# HTTPS dev certs
+*.pfx
+
+# ================================
+# Entity Framework
+# ================================
+
+# EF Core migration snapshots are SOURCE CODE — do NOT ignore them
+# (Intentionally left tracked)
+
+# ================================
+# OS junk
+# ================================
+
+.DS_Store
+Thumbs.db
+
+# ================================
+# Package managers
+# ================================
+
+# NuGet packages (restored automatically)
+packages/
+
+# ================================
+# Docker (future-proofing)
+# ================================
+
+docker-data/

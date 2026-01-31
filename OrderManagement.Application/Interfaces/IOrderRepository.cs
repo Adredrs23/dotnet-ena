@@ -1,6 +1,9 @@
 namespace OrderManagement.Application.Interfaces;
 
-public interface IOrderRepository{
+using OrderManagement.Domain.Entities;
+
+public interface IOrderRepository
+{
   Task AddAsync(Order order);
-  Task GetByIdAsync (Guid Id);
+  Task<Order?> GetByIdAsync(Guid Id);
 }

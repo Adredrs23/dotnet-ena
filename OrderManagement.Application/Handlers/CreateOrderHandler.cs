@@ -1,4 +1,8 @@
-namespace OrderManagement.Application.Handler;
+namespace OrderManagement.Application.Handlers;
+
+using OrderManagement.Application.Interfaces;
+using OrderManagement.Domain.Entities;
+using OrderManagement.Application.Commands;
 
 public class CreateOrderHandler {
   private readonly IOrderRepository _repository;
@@ -9,6 +13,6 @@ public class CreateOrderHandler {
 
   public async Task Handle (CreateOrderCommand command){
     var order = new Order(command.Id);
-    await _repository.addAsync(order);
+    await _repository.AddAsync(order);
   }
 }

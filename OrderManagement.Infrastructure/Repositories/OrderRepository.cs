@@ -15,14 +15,16 @@ public class OrderRepository : IOrderRepository
     _context = ctx;
   }
 
-  public async Task AddAsync(Order order)
+  public Task AddAsync(Order order)
   {
     _context.Orders.Add(order);
-    await _context.SaveChangesAsync();
+    // await _context.SaveChangesAsync();
+
+    return Task.CompletedTask;
   }
 
-  public async Task<Order?> GetByIdAsync(Guid id)
+  public Task<Order?> GetByIdAsync(Guid id)
   {
-    return await _context.Orders.Include(o => o.Items).FirstOrDefaultAsync(o => o.Id == id);
+    return _context.Orders.Include(o => o.Items).FirstOrDefaultAsync(o => o.Id == id);
   }
 }

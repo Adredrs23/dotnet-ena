@@ -3,6 +3,7 @@ namespace OrderManagement.API.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using OrderManagement.Application.Handlers;
 using OrderManagement.Application.Commands;
+using OrderManagement.API.Contracts;
 
 [ApiController]
 [Route("api/orders")]
@@ -16,10 +17,15 @@ public class OrdersController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create()
+    public async Task<IActionResult> Create([FromBody] CreateOrderRequest request)
     {
         var id = Guid.NewGuid();
-        await _handler.Handle(new CreateOrderCommand(id));
+
+        var items = request.Items.Select(
+            i => new CreateOrderItemDto(i.ProductId, i.Quantity, i.Price)
+        ).ToList();
+
+        await _handler.Handle(new CreateOrderCommand(id, items));
         return Ok(id);
     }
 }

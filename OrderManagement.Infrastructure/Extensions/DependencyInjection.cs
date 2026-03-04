@@ -1,12 +1,14 @@
+namespace OrderManagement.Infrastructure.Extensions;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OrderManagement.Application.Handlers;
+using OrderManagement.Application.Handlers.Auth;
 using OrderManagement.Application.Interfaces;
 using OrderManagement.Infrastructure.Persistence;
 using OrderManagement.Infrastructure.Repositories;
 
-namespace OrderManagement.Infrastructure.Extensions;
 
 public static class DependencyInjection
 {
@@ -28,6 +30,11 @@ public static class DependencyInjection
     public static IServiceCollection AddHandlers(this IServiceCollection services)
     {
         services.AddScoped<CreateOrderHandler>();
+        services.AddScoped<RegisterHandler>();
+        services.AddScoped<LoginHandler>();
+        services.AddScoped<RefreshTokenHandler>();
+        services.AddScoped<GoogleLoginHandler>();
+        services.AddScoped<LogoutHandler>();
         return services;
     }
 

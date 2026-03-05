@@ -6,7 +6,7 @@ public interface IRefreshTokenRepository
 {
     public Task<RefreshToken?> GetByTokenHashAsync(string tokenHash);
 
-    public Task<RefreshToken?> GetByUserIdAsync(string userId);
+    public Task<RefreshToken?> GetActiveByUserIdAsync(string userId);
 
     public Task AddAsync(RefreshToken refreshToken);
 

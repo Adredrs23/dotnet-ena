@@ -2,7 +2,6 @@ using OrderManagement.Domain.Exceptions.Auth;
 
 namespace OrderManagement.Domain.Entities.Auth;
 
-
 public class RefreshToken
 {
     public Guid Id { get; private set; }

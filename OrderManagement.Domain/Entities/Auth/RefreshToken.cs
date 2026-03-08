@@ -30,12 +30,21 @@ public class RefreshToken
         CreatedAt = DateTime.UtcNow;
     }
 
-    public Boolean IsValid()
+    public void Revoke()
+    {
+        if (IsRevoked)
+            throw new AuthException("Token already revoked");
+
+        IsRevoked = true;
+        RevokedAt = DateTime.UtcNow;
+    }
+
+    public bool IsValid()
     {
         return !IsRevoked && !IsExpired();
     }
 
-    public Boolean IsExpired()
+    public bool IsExpired()
     {
         return DateTime.UtcNow >= ExpiresAt;
     }

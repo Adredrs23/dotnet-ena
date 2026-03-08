@@ -1,5 +1,6 @@
 using System.Data;
 using Dapper;
+using Microsoft.EntityFrameworkCore;
 using OrderManagement.Application.Interfaces.Auth;
 using OrderManagement.Domain.Entities.Auth;
 
@@ -46,18 +47,40 @@ public class RefreshTokenRepository : IRefreshTokenRepository
 
     }
 
-    // public Task AddAsync(RefreshToken refreshToken)
-    // {
+    public async Task AddAsync(RefreshToken refreshToken)
+    {
+        await _authDbContext.RefreshTokens.AddAsync(refreshToken);
+    }
 
-    // }
+    public async Task UpdateAsync(RefreshToken refreshToken)
+    {
+        _authDbContext.RefreshTokens.Update(refreshToken);
+        // await _authDbContext.SaveChangesAsync();
+    }
 
-    // public Task UpdateAsync(RefreshToken refreshToken)
-    // {
+    public async Task RevokeAllForUserAsync(string userId)
+    {
+        // Load all active tokens for user
+        var tokens = await _authDbContext.RefreshTokens
+            .Where(rt => rt.UserId == userId && !rt.IsRevoked)
+            .ToListAsync();
 
-    // }
+        // Revoke each one (domain logic)
+        foreach (var token in tokens)
+        {
+            token.Revoke();
+        }
 
-    // public Task RevokeAllForUserAsync(string userId)
-    // {
+        // await _authDbContext.SaveChangesAsync();
+    }
 
-    // }
+    public async Task DeleteExpiredTokensAsync()
+    {
+        var expiredTokens = await _authDbContext.RefreshTokens
+            .Where(rt => rt.ExpiresAt < DateTime.UtcNow)
+            .ToListAsync();
+
+        _authDbContext.RefreshTokens.RemoveRange(expiredTokens);
+        // await _authDbContext.SaveChangesAsync();
+    }
 }

@@ -1,4 +1,4 @@
-namespace OrderManagement.Domain.Exceptions;
+namespace OrderManagement.Domain.Exceptions.Common;
 
 public class DomainException : Exception
 {

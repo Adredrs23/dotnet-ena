@@ -1,8 +1,11 @@
+namespace OrderManagement.Infrastructure.Repositories.Auth;
+
 using System.Data;
 using Dapper;
 using Microsoft.EntityFrameworkCore;
 using OrderManagement.Application.Interfaces.Auth;
 using OrderManagement.Domain.Entities.Auth;
+using OrderManagement.Infrastructure.Persistence.Auth;
 
 public class RefreshTokenRepository : IRefreshTokenRepository
 {

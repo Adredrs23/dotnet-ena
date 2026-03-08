@@ -1,9 +1,9 @@
-namespace OrderManagement.API.Controllers;
+namespace OrderManagement.API.Controllers.Orders;
 
 using Microsoft.AspNetCore.Mvc;
 using OrderManagement.Application.Handlers;
 using OrderManagement.Application.Commands;
-using OrderManagement.API.Contracts;
+using OrderManagement.API.Contracts.Orders;
 
 [ApiController]
 [Route("api/orders")]

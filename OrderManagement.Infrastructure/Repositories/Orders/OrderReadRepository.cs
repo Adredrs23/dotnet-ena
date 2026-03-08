@@ -1,6 +1,8 @@
+namespace OrderManagement.Infrastructure.Repositories.Orders;
+
 using System.Data;
 using Dapper;
-using OrderManagement.Application.Queries;
+using OrderManagement.Application.Queries.Orders;
 
 public class OrderReadRepository
 {

@@ -1,8 +1,9 @@
-namespace OrderManagement.Application.Handlers;
+namespace OrderManagement.Application.Handlers.Auth;
 
-using OrderManagement.Application.Interfaces;
-using OrderManagement.Domain.Entities;
-using OrderManagement.Application.Commands;
+using OrderManagement.Application.Commands.Orders;
+using OrderManagement.Application.Interfaces.Orders;
+using OrderManagement.Application.Interfaces.Common;
+using OrderManagement.Domain.Entities.Orders;
 
 public class CreateOrderHandler
 {

@@ -1,8 +1,8 @@
-namespace OrderManagement.Infrastructure.Configurations;
+namespace OrderManagement.Infrastructure.Configurations.Orders;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using OrderManagement.Domain.Entities;
+using OrderManagement.Domain.Entities.Orders;
 
 public class OrderConfiguration : IEntityTypeConfiguration<Order>
 {

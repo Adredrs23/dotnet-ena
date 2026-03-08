@@ -1,6 +1,6 @@
-namespace OrderManagement.Application.Interfaces;
+namespace OrderManagement.Application.Interfaces.Orders;
 
-using OrderManagement.Domain.Entities;
+using OrderManagement.Domain.Entities.Orders;
 
 public interface IOrderRepository
 {

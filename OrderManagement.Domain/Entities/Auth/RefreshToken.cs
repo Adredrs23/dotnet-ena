@@ -1,3 +1,4 @@
+
 using OrderManagement.Domain.Exceptions.Auth;
 
 namespace OrderManagement.Domain.Entities.Auth;
@@ -5,10 +6,10 @@ namespace OrderManagement.Domain.Entities.Auth;
 public class RefreshToken
 {
     public Guid Id { get; private set; }
-    public string UserId { get; private set; }
-    public string TokenHash { get; private set; }
+    public string UserId { get; private set; } = null!;
+    public string TokenHash { get; private set; } = null!;
     public DateTime ExpiresAt { get; private set; }
-    public Boolean IsRevoked { get; private set; }
+    public bool IsRevoked { get; private set; }
     public DateTime CreatedAt { get; private set; }
     public DateTime? RevokedAt { get; private set; }
 

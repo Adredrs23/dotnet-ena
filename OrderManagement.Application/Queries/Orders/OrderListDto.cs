@@ -1,4 +1,4 @@
-namespace OrderManagement.Application.Queries;
+namespace OrderManagement.Application.Queries.Orders;
 
 public class OrderListDto
 {

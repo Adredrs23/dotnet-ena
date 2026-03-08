@@ -1,8 +1,8 @@
-namespace OrderManagement.Infrastructure.Persistence;
+namespace OrderManagement.Infrastructure.Persistence.Orders;
 
 using Microsoft.EntityFrameworkCore;
-using OrderManagement.Domain.Entities;
-using OrderManagement.Infrastructure.Configurations;
+using OrderManagement.Domain.Entities.Orders;
+using OrderManagement.Infrastructure.Configurations.Orders;
 
 public class OrdersDbContext : DbContext
 {

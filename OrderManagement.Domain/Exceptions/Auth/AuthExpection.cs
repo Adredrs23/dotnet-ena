@@ -1,5 +1,7 @@
 namespace OrderManagement.Domain.Exceptions.Auth;
 
+using OrderManagement.Domain.Exceptions.Common;
+
 public class AuthException : DomainException
 {
     public AuthException(string message)

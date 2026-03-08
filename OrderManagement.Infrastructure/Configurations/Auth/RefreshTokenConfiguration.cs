@@ -1,3 +1,4 @@
+namespace OrderManagement.Infrastructure.Configurations.Auth;
 
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

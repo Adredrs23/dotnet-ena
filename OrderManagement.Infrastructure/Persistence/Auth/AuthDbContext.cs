@@ -1,6 +1,9 @@
+namespace OrderManagement.Infrastructure.Persistence.Auth;
+
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using OrderManagement.Domain.Entities.Auth;
+using OrderManagement.Infrastructure.Configurations.Auth;
 using OrderManagement.Infrastructure.Identity;
 
 public class AuthDbContext : IdentityDbContext<ApplicationUser>

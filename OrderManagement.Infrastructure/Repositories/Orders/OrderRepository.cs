@@ -1,9 +1,9 @@
 namespace OrderManagement.Infrastructure.Repositories;
 
 using Microsoft.EntityFrameworkCore;
-using OrderManagement.Application.Interfaces;
-using OrderManagement.Domain.Entities;
-using OrderManagement.Infrastructure.Persistence;
+using OrderManagement.Application.Interfaces.Orders;
+using OrderManagement.Domain.Entities.Orders;
+using OrderManagement.Infrastructure.Persistence.Orders;
 
 public class OrderRepository : IOrderRepository
 {

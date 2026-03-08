@@ -1,4 +1,4 @@
-namespace OrderManagement.Application.Interfaces;
+namespace OrderManagement.Application.Interfaces.Common;
 
 public interface IUnitOfWork
 {

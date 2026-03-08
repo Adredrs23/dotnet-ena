@@ -1,12 +1,14 @@
+
 namespace OrderManagement.Infrastructure.Extensions;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using OrderManagement.Application.Handlers;
 using OrderManagement.Application.Handlers.Auth;
-using OrderManagement.Application.Interfaces;
-using OrderManagement.Infrastructure.Persistence;
+using OrderManagement.Application.Interfaces.Common;
+using OrderManagement.Application.Interfaces.Orders;
+using OrderManagement.Infrastructure.Persistence.Common;
+using OrderManagement.Infrastructure.Persistence.Orders;
 using OrderManagement.Infrastructure.Repositories;
 
 
@@ -38,9 +40,4 @@ public static class DependencyInjection
         return services;
     }
 
-
-    // public static IServiceCollection AddServices(this IServiceCollection services) {
-    //     services.AddScoped<IOrderService, OrderService>();
-    //     return services;
-    // }
 }

@@ -1,4 +1,4 @@
-namespace OrderManagement.Infrastructure.Persistence;
+namespace OrderManagement.Infrastructure.Persistence.Orders;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;

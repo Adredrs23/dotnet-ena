@@ -1,4 +1,4 @@
-namespace OrderManagement.API.Contracts;
+namespace OrderManagement.API.Contracts.Orders;
 
 public record CreateOrderRequest(List<CreateOrderItemRequest> Items);
 

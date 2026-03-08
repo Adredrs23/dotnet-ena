@@ -1,6 +1,7 @@
-using OrderManagement.Application.Interfaces;
+namespace OrderManagement.Infrastructure.Persistence.Common;
 
-namespace OrderManagement.Infrastructure.Persistence;
+using OrderManagement.Application.Interfaces.Common;
+using OrderManagement.Infrastructure.Persistence.Orders;
 
 public class UnitOfWork : IUnitOfWork
 {
